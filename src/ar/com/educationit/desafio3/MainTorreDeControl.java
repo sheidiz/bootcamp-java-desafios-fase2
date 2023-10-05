@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class MainTorreDeControl {
 	public static void main(String[] args) {
-		Scanner teclado = new Scanner(System.in);
 		
 		List<IVolador> voladores = new ArrayList<>();
 		voladores.add(new Avion());
 		voladores.add(new Helicoptero());
 		voladores.add(new Pajaro());
 		
+		//Creo una funcion anonima asi me ahorro crear una clase que extienda de la clase abstracta TorreDeControl
 		TorreDeControl torre = new TorreDeControl() {
 			@Override
 			public void autorizarAterrizaje(IVolador volador) {
@@ -23,9 +23,9 @@ public class MainTorreDeControl {
 					System.out.println("Solicitando aprobación...");
 					//Uso un random para obtener una autorizacion aleatoria
 					if(Math.round(Math.random()*10) > 5) {
-						System.out.println("Puede aterrizar en Pista 2!");
+						System.out.println("[SI] Puede aterrizar en Pista 2!");
 					}else{
-						System.out.println("Permiso denegado para aterrizar en Pista 2");
+						System.out.println("[NO] Permiso denegado para aterrizar en Pista 2");
 					}
 				}
 			}	
