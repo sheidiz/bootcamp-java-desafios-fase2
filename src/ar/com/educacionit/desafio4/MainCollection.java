@@ -12,24 +12,25 @@ public class MainCollection {
 		cc.add("20");
 		cc.add("30");
 		cc.add("40");
-		System.out.println("\nSe agregaron " + cc.size() + " elementos. " + cc);
+		System.out.println("\nSe agregaron " + cc.size() + " elementos. => " + cc);
 		
 		// Metodo addFirst(T)
 		cc.addFirst("1");
-		System.out.println("\nAgrego un 1 al comienzo. " + cc);
+		System.out.println("\nAgrego un 1 al comienzo. => " + cc);
 		
 		// Metodo addLast(T)
 		cc.addLast("50");
-		System.out.println("\nAgrego un 50 al final. " + cc);
+		System.out.println("\nAgrego un 50 al final. => " + cc);
 				
 		// Metodo remove(T)
 		cc.remove("20");
-		System.out.println("\nSe removio el 20. " + cc);
+		System.out.println("\nSe removio el 20. => " + cc);
 		
 		// Metodo removeAll() - limpio la lista
 		cc.removeAll();
+		System.out.println("\nSe limpio la lista.");
 		
 		// Metodo empty() - compruebo si la lista se limpio
-		System.out.println("\nEsta vacia? " + cc.empty());
+		System.out.println("\nEsta vacia? => " + cc.empty());
 	}
 }
