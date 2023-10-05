@@ -1,4 +1,4 @@
-package ar.com.educationit.desafio2;
+package ar.com.educacionit.desafio2;
 
 import java.util.ArrayList;
 
