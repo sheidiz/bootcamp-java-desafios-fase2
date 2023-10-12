@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * Cuando le pregunte al profe en clase dijo que en el Alumno la variable numero de examenes
+ * hacia referencia a la cantidad de examenes. Por lo cual para cada alumno pide ese dato.
+ * El ejercicio tampoco aclaraba que la mayor calificación se calcule por nota o por promedio,
+ * asi que en el ejercicio toma la mejor nota de cada alumno y la compara con otros alumnos
+ * */
+
 public class AppMain {
 	public static void main(String[] args) {
 		System.out.println("Escuela Primaria xyz - Control de notas");
@@ -25,21 +32,23 @@ public class AppMain {
 		List<Alumno> alumnosPromocion = obtenerAlumnosPromocionados(alumnos);
 		System.out.print("3) Alumnos que promocionan: ");
 		if(!alumnosPromocion.isEmpty()) {
+			System.out.print("\n");
 			for(Alumno a : alumnosPromocion) {
-				System.out.println("\n - " + a.toString());
+				System.out.println(" - " + a.toString());
 			}
 		}else {
-			System.out.println("Ninguno promociona");	
+			System.out.println(" Ninguno promociona");	
 		}
 				
 		List<Alumno> alumnosRecursar = obtenerAlumnosQueRecursaran(alumnos);
-		System.out.print("4) Alumnos que deben recursar la materia: ");
-		if(!alumnosRecursar.isEmpty()) {	
+		System.out.print("4) Alumnos que deben recursar la materia:");
+		if(!alumnosRecursar.isEmpty()) {
+			System.out.print("\n");
 			for(Alumno a : alumnosRecursar) {
-				System.out.println("\n - " + a.toString());
+				System.out.println(" - " + a.toString());
 			}
 		}else {
-			System.out.println("Ninguno recursa");
+			System.out.println(" Ninguno recursa");
 		}
 		
 		teclado.close();
