@@ -25,23 +25,17 @@ public class AppMain {
 		
 		List<Alumno> alumnosMayorCalificacion = obtenerAlumnosMayorCalificacion(alumnos); 
 		System.out.println("1) Alumno/s con la calificación más alta: ");
-		for(Alumno a : alumnosMayorCalificacion) {
-			System.out.println(" - " + a.toString());
-		}
+		alumnosMayorCalificacion.forEach( a -> System.out.println(" - " + a.toString()));
 		
 		List<Alumno> alumnosMenorCalificacion = obtenerAlumnosMenorCalificacion(alumnos); 
 		System.out.println("2) Alumno/s con la calificación más baja: ");
-		for(Alumno a : alumnosMenorCalificacion) {
-			System.out.println(" - " + a.toString());
-		}
+		alumnosMenorCalificacion.forEach( a -> System.out.println(" - " + a.toString()));
 		
 		List<Alumno> alumnosPromocion = obtenerAlumnosPromocionados(alumnos);
 		System.out.print("3) Alumnos que promocionan: ");
 		if(!alumnosPromocion.isEmpty()) {
 			System.out.print("\n");
-			for(Alumno a : alumnosPromocion) {
-				System.out.println(" - " + a.toString());
-			}
+			alumnosPromocion.forEach( a -> System.out.println(" - " + a.toString()));
 		}else {
 			System.out.println(" Ninguno promociona");	
 		}
@@ -50,9 +44,7 @@ public class AppMain {
 		System.out.print("4) Alumnos que deben recursar la materia:");
 		if(!alumnosRecursar.isEmpty()) {
 			System.out.print("\n");
-			for(Alumno a : alumnosRecursar) {
-				System.out.println(" - " + a.toString());
-			}
+			alumnosRecursar.forEach( a -> System.out.println(" - " + a.toString()));
 		}else {
 			System.out.println(" Ninguno recursa");
 		}
