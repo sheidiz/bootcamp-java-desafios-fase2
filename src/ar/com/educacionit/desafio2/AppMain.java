@@ -23,11 +23,17 @@ public class AppMain {
 		
 		System.out.println("--Resultados--");
 		
-		Alumno alumnoMayorCalificacion = obtenerAlumnoMayorCalificacion(alumnos); 
-		System.out.println("1) Alumno/s con la calificación más alta: " + alumnoMayorCalificacion.toString());
+		List<Alumno> alumnosMayorCalificacion = obtenerAlumnosMayorCalificacion(alumnos); 
+		System.out.println("1) Alumno/s con la calificación más alta: ");
+		for(Alumno a : alumnosMayorCalificacion) {
+			System.out.println(" - " + a.toString());
+		}
 		
-		Alumno alumnoMenorCalificacion = obtenerAlumnoMenorCalificacion(alumnos); 
-		System.out.println("2) Alumno/s con la calificación más baja: " + alumnoMenorCalificacion.toString());
+		List<Alumno> alumnosMenorCalificacion = obtenerAlumnosMenorCalificacion(alumnos); 
+		System.out.println("2) Alumno/s con la calificación más baja: ");
+		for(Alumno a : alumnosMenorCalificacion) {
+			System.out.println(" - " + a.toString());
+		}
 		
 		List<Alumno> alumnosPromocion = obtenerAlumnosPromocionados(alumnos);
 		System.out.print("3) Alumnos que promocionan: ");
@@ -57,61 +63,68 @@ public class AppMain {
 
 		List<Alumno> alumnos = new ArrayList<>();
 		Alumno alumno;
+		
 		for(int i = 1; i <= cantidadAlumnos; i++) {
-			alumnos.add(cargarAlumno(teclado,i));
+			System.out.println("-Alumno " + i + "-");
+			
+			System.out.print(" Nombre: ");
+			String nombre = teclado.next();
+			
+			System.out.print(" Apellido: ");
+			String apellido = teclado.next();
+			
+			System.out.print(" Examenes: ");
+			int examenes = teclado.nextInt();
+			
+			alumno = new Alumno(nombre, apellido, examenes);
+			for(int j = 1; j <= examenes; j++) {
+				int nota;
+				do {
+					System.out.print("  Nota " + j + ": ");
+					nota = teclado.nextInt();
+				}while(nota<1 || nota>10);
+				alumno.setNota(nota);
+			}
+			alumnos.add(alumno);
 		}
 		return alumnos;
 	}
-	public static Alumno cargarAlumno(Scanner teclado, int i) {
-		Alumno alumno;
-		
-		System.out.println("-Alumno " + i + "-");
-		
-		System.out.print(" Nombre: ");
-		String nombre = teclado.next();
-		
-		System.out.print(" Apellido: ");
-		String apellido = teclado.next();
-		
-		System.out.print(" Examenes: ");
-		int examenes = teclado.nextInt();
-		
-		alumno = new Alumno(nombre, apellido, examenes);
-		for(int j = 1; j <= examenes; j++) {
-			int nota;
-			do {
-				System.out.print("  Nota " + j + ": ");
-				nota = teclado.nextInt();
-			}while(nota<1 || nota>10);
-			alumno.setNota(nota);
+
+	public static int obtenerMayorCalificacion(List<Alumno> alumnos) {
+		int mayorNota = alumnos.get(0).getMayorNota();
+		for(Alumno alumno : alumnos) {
+			int nota = alumno.getMayorNota();
+			if(nota > mayorNota) mayorNota = nota;
 		}
-		return alumno;
+		return mayorNota;
 	}
-	public static Alumno obtenerAlumnoMayorCalificacion(List<Alumno> alumnos) {
-		Alumno alumnoMayorNota = alumnos.get(0);
-		int mayorNota = alumnoMayorNota.getMayorNota();
+	public static List<Alumno> obtenerAlumnosMayorCalificacion(List<Alumno> alumnos) {
+		int mayorNota = obtenerMayorCalificacion(alumnos);
+		List<Alumno> alumnosConMayorCalificacion = new ArrayList<>();
 		
 		for(Alumno alumno : alumnos) {
 			int nota = alumno.getMayorNota();
-			if(nota > mayorNota) {
-				alumnoMayorNota = alumno;
-				mayorNota = nota;
-			}
+			if(nota == mayorNota) alumnosConMayorCalificacion.add(alumno);
 		}
-		return alumnoMayorNota;
+		return alumnosConMayorCalificacion;
 	}
-	public static Alumno obtenerAlumnoMenorCalificacion(List<Alumno> alumnos) {
-		Alumno alumnoMenorNota = alumnos.get(0);
-		int menorNota = alumnoMenorNota.getMenorNota();
+	public static int obtenerMenorCalificacion(List<Alumno> alumnos) {
+		int menorNota = alumnos.get(0).getMenorNota();
+		for(Alumno alumno : alumnos) {
+			int nota = alumno.getMenorNota();
+			if(nota < menorNota) menorNota = nota;
+		}
+		return menorNota;
+	}
+	public static List<Alumno> obtenerAlumnosMenorCalificacion(List<Alumno> alumnos) {
+		int menorNota = obtenerMenorCalificacion(alumnos);
+		List<Alumno> alumnosConMenorCalificacion = new ArrayList<>();
 		
 		for(Alumno alumno : alumnos) {
 			int nota = alumno.getMenorNota();
-			if(nota < menorNota) {
-				alumnoMenorNota = alumno;
-				menorNota = nota;
-			}
+			if(nota == menorNota) alumnosConMenorCalificacion.add(alumno);
 		}
-		return alumnoMenorNota;
+		return alumnosConMenorCalificacion;
 	}
 	public static List<Alumno> obtenerAlumnosPromocionados(List<Alumno> alumnos){
 		List<Alumno> filtrados = new ArrayList<>();
