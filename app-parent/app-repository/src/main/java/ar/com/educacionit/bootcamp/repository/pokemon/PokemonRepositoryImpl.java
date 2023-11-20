@@ -1,10 +1,11 @@
-package ar.com.educacionit.bootcamp.repository;
+package ar.com.educacionit.bootcamp.repository.pokemon;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import ar.com.educacionit.bootcamp.dto.Pokemon;
+import ar.com.educacionit.bootcamp.repository.BaseCrud;
 
 public class PokemonRepositoryImpl extends BaseCrud<Pokemon> implements PokemonRepository {
 	

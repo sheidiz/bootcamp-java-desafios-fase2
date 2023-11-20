@@ -19,3 +19,15 @@ CREATE TABLE IF NOT EXISTS `POKEMON` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+CREATE TABLE `COVID` (
+	`date` VARCHAR(8) NOT NULL DEFAULT '' COLLATE 'utf8mb4_spanish_ci',
+	`states` INT(10) NOT NULL,
+	`positive` INT(10) NOT NULL,
+	`negative` INT(10) NOT NULL,
+	`pending` INT(10) NOT NULL,
+	`hash` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_spanish_ci',
+	PRIMARY KEY (`date`) USING BTREE
+)
+COLLATE='utf8mb4_spanish_ci'
+ENGINE=InnoDB
+;

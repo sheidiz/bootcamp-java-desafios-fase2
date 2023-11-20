@@ -2,8 +2,8 @@ package ar.com.educacionit.bootcamp;
 
 import ar.com.educacionit.bootcamp.connectors.pokemon.PokeApiService;
 import ar.com.educacionit.bootcamp.dto.Pokemon;
-import ar.com.educacionit.bootcamp.service.PokemonService;
 import ar.com.educacionit.bootcamp.service.ServiceLocator;
+import ar.com.educacionit.bootcamp.service.pokemon.PokemonService;
 
 public class PokemonMain {
 
