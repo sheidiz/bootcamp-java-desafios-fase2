@@ -31,3 +31,14 @@ CREATE TABLE `COVID` (
 COLLATE='utf8mb4_spanish_ci'
 ENGINE=InnoDB
 ;
+
+CREATE TABLE `PLACEHOLDER` (
+	`id` INT(10) NOT NULL,
+	`userId` INT(10) NOT NULL,
+	`title` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_spanish_ci',
+	`body` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8mb4_spanish_ci',
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='utf8mb4_spanish_ci'
+ENGINE=InnoDB
+;
