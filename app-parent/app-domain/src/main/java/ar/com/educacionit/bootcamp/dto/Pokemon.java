@@ -26,12 +26,12 @@ public class Pokemon extends Entity {
 	private Integer height;
 	@JsonProperty("weight")
 	private Integer weight;
-	
+
 	public Pokemon() {
-		
+
 	}
-	public Pokemon(Integer id, String name, Integer baseExperience, Integer height,
-			Integer weight) {
+
+	public Pokemon(Integer id, String name, Integer baseExperience, Integer height, Integer weight) {
 		this.id = id;
 		this.name = name;
 		this.baseExperience = baseExperience;
@@ -66,7 +66,10 @@ public class Pokemon extends Entity {
 
 	@JsonProperty("base_experience")
 	public void setBaseExperience(Integer baseExperience) {
-		this.baseExperience = baseExperience;
+		if (baseExperience != null)
+			this.baseExperience = baseExperience;
+		else
+			this.baseExperience = 0;
 	}
 
 	@JsonProperty("height")
@@ -76,7 +79,10 @@ public class Pokemon extends Entity {
 
 	@JsonProperty("height")
 	public void setHeight(Integer height) {
-		this.height = height;
+		if(height != null) 
+			this.height = height;
+		else
+			this.height = 0;
 	}
 
 	@JsonProperty("weight")
@@ -86,7 +92,10 @@ public class Pokemon extends Entity {
 
 	@JsonProperty("weight")
 	public void setWeight(Integer weight) {
-		this.weight = weight;
+		if(weight != null) 
+			this.weight = weight;
+		else
+			this.weight = 0;
 	}
 
 	@Override
@@ -94,6 +103,5 @@ public class Pokemon extends Entity {
 		return "Pokemon [id=" + id + ", name=" + name + ", baseExperience=" + baseExperience + ", height=" + height
 				+ ", weight=" + weight + "]";
 	}
-	
 
 }
