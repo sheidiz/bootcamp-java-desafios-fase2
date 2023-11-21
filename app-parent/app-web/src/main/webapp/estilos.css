@@ -9,7 +9,7 @@
 
 form {
   padding: 10px;
-  width: 40vw;
+  width: 46vw;
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -29,17 +29,26 @@ form label{
 }
 form button,
 form input {
-  min-width: 100px;
+  min-width: 80px;
 }
-
 form button {
   background-color: white;
 }
 
-#content {
+.info {
   border: 1px solid black;
   box-shadow: 10px 10px 5px 0px rgba(199,199,199,1);
-  width: 40vw;
-  min-height: 10vh;
+  padding: 12px 10px;
+}
+#content{
+  width: 46vw;
   text-align: center;
+  border-collapse: collapse;
+}
+#content th, #content td{
+  border-collapse: collapse;
+  border: 1px solid lightgray;
+}
+#content td:nth-child(3), #content td:nth-child(4){
+  max-width: 16vw;
 }

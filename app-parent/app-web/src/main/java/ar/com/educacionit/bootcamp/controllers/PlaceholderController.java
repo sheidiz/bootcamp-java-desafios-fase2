@@ -34,6 +34,7 @@ public class PlaceholderController extends HttpServlet {
 			if(postAPI!=null) {
 				serviceDB.guardar(postAPI);
 				post= serviceDB.buscarPorId(id);
+				System.out.println(post);
 			}
 		}
 		this.enviarJson(resp, post);
@@ -43,6 +44,7 @@ public class PlaceholderController extends HttpServlet {
 			resp.setContentType("application/json");
 			ObjectMapper objectMapper = new ObjectMapper();
 			String jsonPost = objectMapper.writeValueAsString(post);
+			System.out.println(jsonPost);
 			resp.getWriter().print(jsonPost);
 		}
 	}

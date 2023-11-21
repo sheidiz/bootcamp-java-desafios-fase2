@@ -16,25 +16,25 @@ public class PlaceholderRepositoryImpl extends BaseCrud<Placeholder> implements 
 
 	@Override
 	protected String getSaveSQL() {
-		return "(id, userId, title, body) values (?,?,?,?)";
+		return "(userId, id, title, body) values (?,?,?,?)";
 	}
 
 	@Override
 	protected void saveEntity(Placeholder entidad, PreparedStatement pst) throws SQLException {
-		pst.setInt(1, entidad.getId());
-		pst.setInt(2, entidad.getUserId());
+		pst.setInt(1, entidad.getUserId());
+		pst.setInt(2, entidad.getId());
 		pst.setString(3, entidad.getTitle());
 		pst.setString(4, entidad.getBody());
 	}
 
 	@Override
 	protected Placeholder fromResultSetToEntity(ResultSet res) throws SQLException {
-		int id_ = res.getInt(1);
-		int userId = res.getInt(2);
+		int userId = res.getInt(1);
+		int id_ = res.getInt(2);
 		String title = res.getString(3);
 		String body = res.getString(4);
 
-		return new Placeholder(id_, userId, title, body);
+		return new Placeholder(userId, id_, title, body);
 	}
 
 }
