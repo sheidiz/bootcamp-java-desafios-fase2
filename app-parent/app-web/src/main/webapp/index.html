@@ -17,6 +17,15 @@
         <input type="number" name="id" id="pokemonId" min="1" max="1017" required />
       </label>
     </form>
+
+    <form id="covidForm" onsubmit="event.preventDefault();">
+      <button type="submit" onclick="getCovidUSData()">Covid US</button>
+      <label for="covidDate">Ingrese una fecha:
+        <input type="date" name="date" id="covidDate" required />
+      </label>
+      <label>(13/01/2020 a 07/03/2021)</label>
+    </form>
+
     <div id="content"></div>
 
     <script src="getData.js"></script>

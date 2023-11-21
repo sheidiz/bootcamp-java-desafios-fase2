@@ -92,7 +92,7 @@ public abstract class BaseCrud<T> extends Entity implements BaseRepository<T> {
 
 	@Override
 	public T buscarPorCampo(String campo, String valor) {
-		System.out.println("getById " + type.getName());
+		System.out.println("getByColumn " + type.getName());
 		String sql = "SELECT * FROM " + this.table + " WHERE " + campo + " = " + valor;
 		T entity = null;
 		

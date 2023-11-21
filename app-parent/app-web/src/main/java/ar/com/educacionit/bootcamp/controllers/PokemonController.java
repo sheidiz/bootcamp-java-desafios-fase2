@@ -1,7 +1,6 @@
 package ar.com.educacionit.bootcamp.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,8 +18,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class PokemonController extends HttpServlet {
 
 	private static final long serialVersionUID = 4694227166969350824L;
-	PokemonService serviceDB = (PokemonService) ServiceLocator.getService(PokemonService.class);
-	PokeApiService serviceAPI = (PokeApiService) ServiceLocator.getService(PokeApiService.class);
+	private PokemonService serviceDB = (PokemonService) ServiceLocator.getService(PokemonService.class);
+	private PokeApiService serviceAPI = (PokeApiService) ServiceLocator.getService(PokeApiService.class);
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
