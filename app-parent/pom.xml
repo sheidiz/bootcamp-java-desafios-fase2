@@ -18,7 +18,6 @@
 	</properties>
 
 	<modules>
-		<module>app-console</module>
 		<module>app-domain</module>
 		<module>app-repository</module>
 		<module>app-rest-api-connector</module>

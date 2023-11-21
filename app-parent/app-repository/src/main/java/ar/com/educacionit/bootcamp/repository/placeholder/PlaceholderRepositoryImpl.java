@@ -3,7 +3,6 @@ package ar.com.educacionit.bootcamp.repository.placeholder;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
 
 import ar.com.educacionit.bootcamp.dto.Placeholder;
 import ar.com.educacionit.bootcamp.repository.BaseCrud;

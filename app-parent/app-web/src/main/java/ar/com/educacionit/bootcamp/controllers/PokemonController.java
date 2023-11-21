@@ -26,15 +26,15 @@ public class PokemonController extends HttpServlet {
 
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Pokemon pkmn = serviceDB.buscarPorId(id);
-		
-		if(pkmn == null) {
+
+		if (pkmn == null) {
 			Pokemon pkmnApi = serviceAPI.buscarPorId(id);
-			if(pkmnApi!=null) {
+			if (pkmnApi != null) {
 				serviceDB.guardar(pkmnApi);
 				pkmn = serviceDB.buscarPorId(id);
 			}
 		}
-		
+
 		if (pkmn != null) {
 			resp.setContentType("application/json");
 			ObjectMapper objectMapper = new ObjectMapper();

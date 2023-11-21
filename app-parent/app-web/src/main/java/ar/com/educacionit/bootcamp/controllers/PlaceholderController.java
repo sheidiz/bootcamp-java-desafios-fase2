@@ -24,23 +24,23 @@ public class PlaceholderController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Placeholder post = serviceDB.buscarPorId(id);
-		
+
 		// si no lo encontro lo busca en la api
 		if (post == null) {
 			Placeholder postAPI = serviceAPI.buscarPorId(id);
-			if(postAPI!=null) {
+			if (postAPI != null) {
 				serviceDB.guardar(postAPI);
-				post= serviceDB.buscarPorId(id);
-				System.out.println(post);
+				post = serviceDB.buscarPorId(id);
 			}
 		}
 		this.enviarJson(resp, post);
 	}
-	private void enviarJson (HttpServletResponse resp, Placeholder post) throws IOException {
-		if(post!= null) {
+
+	private void enviarJson(HttpServletResponse resp, Placeholder post) throws IOException {
+		if (post != null) {
 			resp.setContentType("application/json");
 			ObjectMapper objectMapper = new ObjectMapper();
 			String jsonPost = objectMapper.writeValueAsString(post);
