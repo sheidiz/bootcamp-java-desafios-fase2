@@ -24,8 +24,6 @@ public class PlaceholderController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		resp.addHeader("Access-Control-Allow-Origin", "http://localhost:5500");
 		
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Placeholder post = serviceDB.buscarPorId(id);

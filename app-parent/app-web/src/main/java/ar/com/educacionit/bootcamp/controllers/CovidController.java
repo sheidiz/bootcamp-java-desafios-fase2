@@ -24,8 +24,6 @@ public class CovidController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		resp.addHeader("Access-Control-Allow-Origin", "http://localhost:5500");
-		
 		String date = req.getParameter("date");
 		
 		Covid covid = serviceDB.buscarPorCampo("date", date);
