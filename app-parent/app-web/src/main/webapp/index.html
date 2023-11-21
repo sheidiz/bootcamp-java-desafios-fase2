@@ -26,6 +26,13 @@
       <label>(13/01/2020 a 07/03/2021)</label>
     </form>
 
+    <form id="placeholderForm" onsubmit="event.preventDefault();">
+      <button type="submit" onclick="getPost()">Placeholder Posts</button>
+      <label for="postId">Ingrese id:
+        <input type="number" name="id" id="postId" min="1" max="100" required />
+      </label>
+    </form>
+
     <div id="content"></div>
 
     <script src="getData.js"></script>

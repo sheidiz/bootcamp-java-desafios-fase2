@@ -21,12 +21,15 @@ form {
 #covidForm{
   background-color: #31347a;
 }
+#placeholderForm{
+  background-color: #2c2d2c;
+}
 form label{
   color: white;
 }
 form button,
 form input {
-  width: 100px;
+  min-width: 100px;
 }
 
 form button {
@@ -36,7 +39,7 @@ form button {
 #content {
   border: 1px solid black;
   box-shadow: 10px 10px 5px 0px rgba(199,199,199,1);
-  min-width: 40vw;
+  width: 40vw;
   min-height: 10vh;
   text-align: center;
 }
