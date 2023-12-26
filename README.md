@@ -1,10 +1,8 @@
-# bootcamp-java-desafios-fase2
-Desafios del Bootcamp Java de EducacionIT 2023 - FASE 2
+# React + Vite
 
-### Ejercicios
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-JAVA
-- Desafio 1 => Corregido.
-- Desafio 2 => Entregado!
-- Desafio 3 => Entregado!
-- Desafio 4 => Entregado!
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
