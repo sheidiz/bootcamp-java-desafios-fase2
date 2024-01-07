@@ -1,8 +1,20 @@
-# React + Vite
+# Desafío 2, Validación de fechas con componentes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El objetivo es utilizar los hooks más comunes, a saber: 
+- useRef
+- useState
+- invocar funciones
 
-Currently, two official plugins are available:
+- Crear una rama con el nombre feature/desafio-react-2:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Generar un componente FechaValidaComponent.js que permita:
+
+- Ingresar una fecha con formato dd/mm/yyyy (dd int, mm int, yyyy int)
+
+  - validar que dd >=1 && <=31 TENIENDO EN CUENTA EL MES
+  - validar que mes >=1 && <=12
+  - validar que año >=1900 && <= 2099
+
+Nota:  Ojo, si el año es bisiesto, febrero tiene 29  días.
+
+Informar si la fecha es correcta, utilizando un componente con nombre a elección.
