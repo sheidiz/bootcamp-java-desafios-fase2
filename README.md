@@ -1,8 +1,26 @@
-# React + Vite
+# Desafío 1, Mi CV
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+El objetivo es pensar en términos de componentes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Crear una rama con el nombre feature/desafio-react-1
+
+Generar un componente MiCVComponent.jsx que contenga las secciones:
+
+ -FotoComponentComponent.jsx
+
+ -DatosPersonalesComponent.jsx
+
+ -EducacionComponent.jsx
+
+ -ExperienciaLaborarlComponent.jsx
+
+  Nota: debe tener para cada experiencia un subComponente
+
+ - ExperienciaComponent.jsx
+
+ -EducacionComponent.jsx
+
+-Definir para cada componente su módulo css.
+
+Crear un objeto que alimente las secciones correspondientes.
