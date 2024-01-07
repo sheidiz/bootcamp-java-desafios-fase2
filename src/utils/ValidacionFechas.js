@@ -5,7 +5,7 @@ export const toFecha = (inputFecha) => {
     const mes = parseInt(inputFechaSplit[1]);
     const anio = parseInt(inputFechaSplit[2]);
 
-    if (!validarFecha(dia, mes, anio)) return null;
+    if (!validarFecha(dia, mes, anio) || inputFecha.length !== 10) return null;
 
     return {
         dia: inputFechaSplit[0],
