@@ -3,24 +3,26 @@
 
 El objetivo es pensar en términos de componentes.
 
-Crear una rama con el nombre feature/desafio-react-1
+-Crear una rama con el nombre feature/desafio-react-1
 
-Generar un componente MiCVComponent.jsx que contenga las secciones:
+-Crear un objeto que alimente las secciones correspondientes.
 
- -FotoComponentComponent.jsx
+-Generar un componente MiCVComponent.jsx que contenga las secciones:
 
- -DatosPersonalesComponent.jsx
+ - FotoComponentComponent.jsx
 
- -EducacionComponent.jsx
+ - DatosPersonalesComponent.jsx
 
- -ExperienciaLaborarlComponent.jsx
+ - EducacionComponent.jsx
+
+ - ExperienciaLaborarlComponent.jsx
 
   Nota: debe tener para cada experiencia un subComponente
 
  - ExperienciaComponent.jsx
 
- -EducacionComponent.jsx
+ - EducacionComponent.jsx
 
 -Definir para cada componente su módulo css.
 
-Crear un objeto que alimente las secciones correspondientes.
+
